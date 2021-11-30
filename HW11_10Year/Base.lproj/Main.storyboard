@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,96 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HW11_10Year" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2000" translatesAutoresizingMaskIntoConstraints="NO" id="Xay-TW-WWb">
+                                <rect key="frame" x="15.5" y="44" width="383" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="383" id="72x-CK-HyW"/>
+                                    <constraint firstAttribute="height" constant="300" id="XtB-p8-YYN"/>
+                                </constraints>
+                            </imageView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="ESI-FP-aTr">
+                                <rect key="frame" x="47" y="379" width="320" height="216"/>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-31626000">
+                                    <!--1999-12-31 23:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="378662399">
+                                    <!--2012-12-31 15:59:59 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="pickerChangedDate:" destination="BYZ-38-t0r" eventType="valueChanged" id="AMc-EG-Dvf"/>
+                                </connections>
+                            </datePicker>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2000" minValue="2000" maxValue="2012" translatesAutoresizingMaskIntoConstraints="NO" id="Keh-yc-ahs">
+                                <rect key="frame" x="28" y="645" width="358" height="31"/>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="QJU-3T-6J5"/>
+                                </connections>
+                            </slider>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="oeG-wT-UXo">
+                                <rect key="frame" x="128.5" y="745" width="157.5" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自動播放" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jp-Zm-Dgi">
+                                        <rect key="frame" x="0.0" y="0.0" width="69.5" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="p1I-kB-VFP">
+                                        <rect key="frame" x="108.5" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="switchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="eci-EP-Zt5"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ljd-RI-LNB">
+                                <rect key="frame" x="20" y="615" width="41" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2012" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDo-RL-ip7">
+                                <rect key="frame" x="356.5" y="615" width="37.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.6970581908326049" green="0.92964908626529719" blue="0.63772411399592432" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ljd-RI-LNB" firstAttribute="top" secondItem="ESI-FP-aTr" secondAttribute="bottom" constant="20" id="CWX-sE-rbZ"/>
+                            <constraint firstItem="oeG-wT-UXo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Dh7-Hl-YRY"/>
+                            <constraint firstItem="Ljd-RI-LNB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="KXH-IR-320"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GDo-RL-ip7" secondAttribute="trailing" constant="20" id="Qgw-AX-53z"/>
+                            <constraint firstItem="Keh-yc-ahs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="RWx-94-ANm"/>
+                            <constraint firstItem="ESI-FP-aTr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T59-E9-j9t"/>
+                            <constraint firstItem="GDo-RL-ip7" firstAttribute="top" secondItem="ESI-FP-aTr" secondAttribute="bottom" constant="20" id="Wpo-X1-pes"/>
+                            <constraint firstItem="ESI-FP-aTr" firstAttribute="top" secondItem="Xay-TW-WWb" secondAttribute="bottom" constant="35" id="ZX4-eM-URU"/>
+                            <constraint firstItem="Xay-TW-WWb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ge3-B7-w81"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Keh-yc-ahs" secondAttribute="trailing" constant="30" id="jVh-LV-swl"/>
+                            <constraint firstItem="Xay-TW-WWb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="piV-o8-xjM"/>
+                            <constraint firstItem="oeG-wT-UXo" firstAttribute="top" secondItem="Keh-yc-ahs" secondAttribute="bottom" constant="70" id="rqa-tV-QGr"/>
+                            <constraint firstItem="Keh-yc-ahs" firstAttribute="top" secondItem="ESI-FP-aTr" secondAttribute="bottom" constant="50" id="znp-Ks-odd"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="ESI-FP-aTr" id="YNb-a7-9zu"/>
+                        <outlet property="ivImage" destination="Xay-TW-WWb" id="XGV-is-Pnn"/>
+                        <outlet property="slider" destination="Keh-yc-ahs" id="VQq-7d-HiI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="20" y="80"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="2000" width="3836" height="3000"/>
+    </resources>
 </document>
